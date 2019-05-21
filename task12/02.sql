@@ -7,4 +7,4 @@ JOIN
     SELECT MAX(LiteracyRate.Year), LiteracyRate.CountryCode, LiteracyRate.Rate FROM LiteracyRate
     GROUP BY LiteracyRate.CountryCode
 )
-ON CountryCode = Country.Code
+ON CountryCode = Country.Code;
