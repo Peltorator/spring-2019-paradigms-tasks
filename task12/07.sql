@@ -5,7 +5,7 @@
 -- население страны тоже может быть равным 0, в этом случае выводить такую
 -- страну не нужно). (0,5 баллов)
 SELECT Country.Name FROM Country
-JOIN City ON City.CountryCode = Country.Code
+LEFT JOIN City ON City.CountryCode = Country.Code
 GROUP BY Country.Code
 HAVING 2 * SUM(City.Population) > Country.Population
 ORDER BY Country.Name;
