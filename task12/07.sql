@@ -7,5 +7,5 @@
 SELECT Country.Name FROM Country
 LEFT JOIN City ON City.CountryCode = Country.Code
 GROUP BY Country.Code
-HAVING 2 * SUM(City.Population) > Country.Population
+HAVING (COUNT(City.Population) = 0 AND Country.Population > 0) OR 2 * SUM(City.Population) > Country.Population
 ORDER BY Country.Name;
